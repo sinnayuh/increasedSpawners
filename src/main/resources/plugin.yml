@@ -1,0 +1,5 @@
+name: increasedSpawners
+version: '1.0-SNAPSHOT'
+author: 'sin'
+main: codes.sinister.increasedSpawners.plugin.increasedSpawnersPlugin
+api-version: '1.21'
