@@ -3,6 +3,7 @@ package codes.sinister.increasedSpawners.commands;
 import codes.sinister.increasedSpawners.Main;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.CreatureSpawner;
@@ -17,18 +18,20 @@ import revxrsal.commands.bukkit.annotation.CommandPermission;
 public record MainCommand() {
     @DefaultFor({"increasedspawners", "is", "inc"})
     public void onBaseCommand(Player sender) {
-        sender.sendMessage(Component.text("Increased Spawners Help", NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("Increased Spawners Help", NamedTextColor.YELLOW).decoration(TextDecoration.BOLD, true));
         sender.sendMessage(Component.text("/inc help", NamedTextColor.YELLOW).append(Component.text(" - Shows this help menu", NamedTextColor.GRAY)));
         sender.sendMessage(Component.text("/inc version", NamedTextColor.YELLOW).append(Component.text(" - Shows the plugin version", NamedTextColor.GRAY)));
-        sender.sendMessage(Component.text("/inc radius <int>", NamedTextColor.YELLOW).append(Component.text(" - Sets the spawner range", NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text("/inc getradius", NamedTextColor.YELLOW).append(Component.text(" - Gets the spawner range", NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text("/inc setradius <int>", NamedTextColor.YELLOW).append(Component.text(" - Sets the spawner range", NamedTextColor.GRAY)));
     }
 
     @Subcommand({"help"})
     public void onHelpCommand(Player sender) {
-        sender.sendMessage(Component.text("Increased Spawners Help", NamedTextColor.YELLOW));
+        sender.sendMessage(Component.text("Increased Spawners Help", NamedTextColor.YELLOW).decoration(TextDecoration.BOLD, true));
         sender.sendMessage(Component.text("/inc help", NamedTextColor.YELLOW).append(Component.text(" - Shows this help menu", NamedTextColor.GRAY)));
         sender.sendMessage(Component.text("/inc version", NamedTextColor.YELLOW).append(Component.text(" - Shows the plugin version", NamedTextColor.GRAY)));
-        sender.sendMessage(Component.text("/inc radius <int>", NamedTextColor.YELLOW).append(Component.text(" - Sets the spawner range", NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text("/inc getradius", NamedTextColor.YELLOW).append(Component.text(" - Gets the spawner range", NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text("/inc setradius <int>", NamedTextColor.YELLOW).append(Component.text(" - Sets the spawner range", NamedTextColor.GRAY)));
     }
 
     @Subcommand({"version", "ver"})
