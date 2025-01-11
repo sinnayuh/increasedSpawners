@@ -15,7 +15,7 @@ public class SpawnerListener implements Listener {
         Block block = event.getBlockPlaced();
         if (block.getType() == Material.SPAWNER) {
             CreatureSpawner spawner = (CreatureSpawner) block.getState();
-            spawner.setRequiredPlayerRange(32);
+            spawner.setRequiredPlayerRange(16);
             spawner.update();
             System.out.println("Increased Spawners range placed at " + block.getLocation());
         }
